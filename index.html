@@ -3,24 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>FiestaMania - Los Mejores Eventos</title>
-=======
     <title>FiestaMania Ecuador - Los Mejores Eventos</title>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Variables CSS para mantener consistencia */
         :root {
-<<<<<<< HEAD
-            --primary-color: #8a2be2;
-            --secondary-color: #ff1493;
-            --accent-color: #00ffff;
-=======
-            --primary-color: #FF5722;
+            --primary-color: #FF7043; /* naranja más suave */
             --secondary-color: #FFC107;
             --accent-color: #00BCD4;
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
             --dark-color: #1a1a2e;
             --light-color: #f8f9fa;
             --text-color: #333;
@@ -34,6 +24,32 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+            /* Modal de éxito */
+            .modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.45);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2000;
+                padding: 20px;
+            }
+        
+            .modal-box {
+                background: #fff;
+                color: #111;
+                padding: 22px;
+                border-radius: 12px;
+                max-width: 520px;
+                width: 100%;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+                text-align: left;
+            }
+        
+            .modal-actions { display:flex; gap:12px; justify-content:flex-end; margin-top:16px }
+            .modal-actions .btn { width:auto; padding:10px 16px }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -185,11 +201,7 @@
             opacity: 0.9;
         }
 
-<<<<<<< HEAD
-        /* Eventos Destacados */
-=======
         /* Secciones generales */
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
         .section-title {
             text-align: center;
             margin-bottom: 50px;
@@ -208,10 +220,7 @@
             border-radius: 2px;
         }
 
-<<<<<<< HEAD
-=======
         /* Eventos Destacados */
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
         .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -271,8 +280,9 @@
 
         /* Categorías */
         .categories {
-            background-color: var(--dark-color);
-            color: white;
+            /* fondo más claro y pastel para la sección de categorías */
+            background: linear-gradient(135deg, var(--accent-color), var(--light-color));
+            color: var(--dark-color);
         }
 
         .categories-grid {
@@ -301,8 +311,6 @@
             color: var(--accent-color);
         }
 
-<<<<<<< HEAD
-=======
         /* Sección de Párrafos */
         .paragraphs-section {
             background-color: white;
@@ -471,7 +479,6 @@
             color: var(--primary-color);
         }
 
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
         /* Testimonios */
         .testimonials-slider {
             position: relative;
@@ -717,6 +724,230 @@
                 padding: 60px 0;
             }
         }
+        /* Formulario de Registro*/
+        .form-section {
+            background: linear-gradient(135deg, 
+                rgba(26, 26, 46, 0.9) 0%, 
+                rgba(255, 87, 34, 0.15) 50%, 
+                rgba(255, 193, 7, 0.1) 100%),
+                url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 1;
+        }
+
+        .form-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 87, 34, 0.2);
+        }
+
+        .form-header i {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .form-header h3 {
+            color: var(--dark-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1rem;
+        }
+
+        .form-required {
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e8ecf1;
+            border-radius: 12px;
+            background: #f8fafc;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.1);
+        }
+
+        /* Estilos para el campo de archivo */
+        input[type="file"].form-control {
+            padding: 12px;
+            background: #f8fafc;
+            border: 2px dashed #e8ecf1;
+            cursor: pointer;
+        }
+
+        input[type="file"].form-control:hover {
+            border-color: var(--primary-color);
+            background: rgba(255, 87, 34, 0.05);
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            max-width: 200px;
+            display: none;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 45px;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Estilos para el campo de archivo */
+        input[type="file"].form-control {
+            padding: 12px;
+            background: #f8fafc;
+            border: 2px dashed #e8ecf1;
+            cursor: pointer;
+        }
+
+        input[type="file"].form-control:hover {
+            border-color: var(--primary-color);
+            background: rgba(255, 87, 34, 0.05);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #e8ecf1;
+        }
+
+        .form-checkbox input {
+            margin-right: 12px;
+            margin-top: 3px;
+            transform: scale(1.2);
+        }
+
+        .form-checkbox label {
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-large {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.3);
+        }
+
+        /* Responsive para formulario */
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .form-header i {
+                font-size: 3rem;
+            }
+            
+            .form-header h3 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -724,24 +955,18 @@
     <header>
         <div class="container">
             <nav class="navbar">
-<<<<<<< HEAD
-                <a href="#" class="logo">FiestaMania</a>
-=======
                 <a href="#" class="logo">FiestaMania Ecuador</a>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#eventos">Eventos</a></li>
                     <li><a href="#categorias">Categorías</a></li>
-<<<<<<< HEAD
-=======
                     <li><a href="#parrafos">Sobre Nosotros</a></li>
                     <li><a href="#listas">Servicios</a></li>
                     <li><a href="#graficos">Estadísticas</a></li>
                     <li><a href="#videos">Galería</a></li>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                     <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#registro">Registro</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -754,13 +979,8 @@
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
-<<<<<<< HEAD
-                <h1>Vive la Experiencia de la Fiesta Perfecta</h1>
-                <p>Descubre los eventos más exclusivos, con la mejor música, ambiente y gente. Reserva tu entrada ahora y prepárate para una noche inolvidable.</p>
-=======
                 <h1>Vive la Experiencia de la Fiesta Perfecta en Ecuador</h1>
                 <p>Descubre los eventos más exclusivos en Quito, Guayaquil y Cuenca. Con la mejor música, ambiente y gente. Reserva tu entrada ahora y prepárate para una noche inolvidable.</p>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                 <a href="#eventos" class="btn">Explorar Eventos</a>
             </div>
         </div>
@@ -769,11 +989,7 @@
     <!-- Eventos Destacados -->
     <section id="eventos">
         <div class="container">
-<<<<<<< HEAD
-            <h2 class="section-title">Eventos Destacados</h2>
-=======
             <h2 class="section-title">Eventos Destacados en Ecuador</h2>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
             <div class="events-grid">
                 <!-- Evento 1 -->
                 <div class="event-card">
@@ -786,11 +1002,7 @@
                         <h3 class="event-title">Fiesta Neon Underwater</h3>
                         <div class="event-location">
                             <i class="fas fa-map-marker-alt"></i>
-<<<<<<< HEAD
-                            <span>Club Atlantis, Ciudad</span>
-=======
                             <span>Club Atlantis, Quito</span>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                         </div>
                         <p>Sumérgete en una experiencia única con luces neon, música electrónica y un ambiente submarino.</p>
                         <a href="#" class="btn btn-secondary">Comprar Entradas</a>
@@ -808,11 +1020,7 @@
                         <h3 class="event-title">Sunset Beach Party</h3>
                         <div class="event-location">
                             <i class="fas fa-map-marker-alt"></i>
-<<<<<<< HEAD
-                            <span>Playa Sol Dorado</span>
-=======
                             <span>Playa Montañita, Santa Elena</span>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                         </div>
                         <p>Disfruta del atardecer en la playa con música house, cócteles tropicales y ambiente playero.</p>
                         <a href="#" class="btn btn-secondary">Comprar Entradas</a>
@@ -821,7 +1029,7 @@
 
                 <!-- Evento 3 -->
                 <div class="event-card">
-                    <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1571715268998-d6e79bed5fc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');"></div>
+                    <div class="event-img" style="background-image: url('https://wallup.net/wp-content/uploads/2019/09/07/1028593-fiesta-baile-ocio-discoteca-748x499.jpg');"></div>
                     <div class="event-content">
                         <div class="event-date">
                             <i class="far fa-calendar-alt"></i>
@@ -830,11 +1038,7 @@
                         <h3 class="event-title">Retro 80's Night</h3>
                         <div class="event-location">
                             <i class="fas fa-map-marker-alt"></i>
-<<<<<<< HEAD
-                            <span>Club Nostalgia</span>
-=======
                             <span>Club Nostalgia, Guayaquil</span>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                         </div>
                         <p>Viaja en el tiempo con los mejores éxitos de los 80s, vestimenta retro y mucha diversión.</p>
                         <a href="#" class="btn btn-secondary">Comprar Entradas</a>
@@ -884,11 +1088,6 @@
         </div>
     </section>
 
-<<<<<<< HEAD
-    <!-- Testimonios -->
-    <section id="testimonios">
-        <div class="container">
-=======
     <!-- Sección de Párrafos -->
     <section class="paragraphs-section" id="parrafos">
         <div class="container">
@@ -1024,10 +1223,10 @@
                 
                 <div class="video-box">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/example3" title="Behind the Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                                <iframe src="https://www.youtube.com/embed/U2EnPWVImLY" title="The Best Scenes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                     <div class="video-content">
-                        <h3>Behind the Scenes</h3>
+                        <h3>The Best Scenes</h3>
                         <p>Conoce cómo preparamos cada detalle para crear experiencias únicas en Ecuador</p>
                     </div>
                 </div>
@@ -1038,8 +1237,6 @@
     <!-- Testimonios -->
     <section id="testimonios">
         <div class="container">
-            
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
             <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
             <div class="testimonials-slider">
                 <!-- Testimonio 1 -->
@@ -1069,12 +1266,122 @@
                 <div class="slider-dot" data-index="2"></div>
             </div>
         </div>
-<<<<<<< HEAD
     </section>
 
-=======
-        <!-- Contacto -->
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
+    <!-- Sección de Formulario de Registro -->
+    <section class="form-section" id="registro">
+        <div class="container">
+            <h2 class="section-title">Registro para Eventos</h2>
+            <div class="form-container">
+                <form action="procesar_registro.php" method="POST" id="formulario-registro" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <!-- Columna izquierda -->
+                        <div class="form-column">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo <span class="form-required">*</span></label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico <span class="form-required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefono">Teléfono <span class="form-required">*</span></label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="edad">Edad <span class="form-required">*</span></label>
+                                <input type="number" id="edad" name="edad" class="form-control" min="18" max="80" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ciudad">Ciudad de Residencia <span class="form-required">*</span></label>
+                                <select id="ciudad" name="ciudad" class="form-control" required>
+                                    <option value="">Seleccione una ciudad</option>
+                                    <option value="quito">Quito</option>
+                                    <option value="guayaquil">Guayaquil</option>
+                                    <option value="cuenca">Cuenca</option>
+                                    <option value="ambato">Ambato</option>
+                                    <option value="manta">Manta</option>
+                                    <option value="otra">Otra</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Columna derecha -->
+                        <div class="form-column">
+                            <div class="form-group">
+                                <label for="evento">Evento de Interés <span class="form-required">*</span></label>
+                                <select id="evento" name="evento" class="form-control" required>
+                                    <option value="">Seleccione un evento</option>
+                                    <option value="fiesta_neon">Fiesta Neon Underwater</option>
+                                    <option value="sunset_beach">Sunset Beach Party</option>
+                                    <option value="retro_80s">Retro 80's Night</option>
+                                    <option value="electronic_festival">Electronic Festival Quito</option>
+                                    <option value="beach_party">Beach Party Montañita</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cantidad_entradas">Cantidad de Entradas <span class="form-required">*</span></label>
+                                <input type="number" id="cantidad_entradas" name="cantidad_entradas" class="form-control" min="1" max="10" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fecha_evento">Fecha Preferida del Evento</label>
+                                <input type="date" id="fecha_evento" name="fecha_evento" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="tipo_pago">Método de Pago Preferido</label>
+                                <select id="tipo_pago" name="tipo_pago" class="form-control">
+                                    <option value="">Seleccione método</option>
+                                    <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                                    <option value="tarjeta_debito">Tarjeta de Débito</option>
+                                    <option value="transferencia">Transferencia Bancaria</option>
+                                    <option value="paypal">PayPal</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="comentarios">Comentarios Adicionales</label>
+                                <textarea id="comentarios" name="comentarios" class="form-control" placeholder="¿Alguna solicitud especial o comentario?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event_image">Foto del Evento (Opcional)</label>
+                        <input type="file" id="event_image" name="event_image" class="form-control" accept="image/*">
+                        <small style="color: #666; font-size: 0.85rem; display: block; margin-top: 5px;">
+                            Formatos aceptados: JPG, PNG, GIF. Imagen de como seria su evento ideal.
+                        </small>
+                        <div class="image-preview" id="image-preview" style="display: none;">
+                            <img src="" alt="Vista previa">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones <span class="form-required">*</span></label>
+                    </div>
+                    
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Deseo recibir información sobre próximos eventos y promociones</label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn">Enviar Registro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Contacto -->
     <section class="contact" id="contacto">
         <div class="container">
@@ -1086,29 +1393,17 @@
                     
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-<<<<<<< HEAD
-                        <span>Av. Principal 123, Ciudad</span>
-=======
                         <span>Av. Amazonas N34-451 y Av. Atahualpa, Quito</span>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                     </div>
                     
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-<<<<<<< HEAD
-                        <span>+1 234 567 890</span>
-=======
                         <span>+593 2 234 5678</span>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                     </div>
                     
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-<<<<<<< HEAD
-                        <span>info@fiestamania.com</span>
-=======
                         <span>info@fiestamaniaecuador.com</span>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                     </div>
                     
                     <div class="social-links">
@@ -1119,189 +1414,171 @@
                     </div>
                 </div>
                 
-<<<<<<< HEAD
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nombre" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Asunto">
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Mensaje" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Enviar Mensaje</button>
-                    </form>
-=======
                 <div class="map-container">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.785685373789!2d-78.4898889250187!3d-0.1804352353218194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a8e0cbb25a7%3A0x7a9e37e0b1d5b0b1!2sQuito%2C%20Ecuador!5e0!3m2!1ses!2sus!4v1690234567890!5m2!1ses!2sus" width="100%" height="100%" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
                 </div>
             </div>
         </div>
     </section>
-<<<<<<< HEAD
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>FiestaMania</h4>
-                    <p>Creando experiencias inolvidables desde 2010. Nos especializamos en organizar los eventos más exclusivos y divertidos.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#eventos">Eventos</a></li>
-                        <li><a href="#categorias">Categorías</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Eventos Populares</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Fiesta Neon Underwater</a></li>
-                        <li><a href="#">Sunset Beach Party</a></li>
-                        <li><a href="#">Retro 80's Night</a></li>
-                        <li><a href="#">Moonlight Rooftop</a></li>
-                        <li><a href="#">Carnival Extravaganza</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Suscríbete</h4>
-                    <p>Recibe las últimas novedades sobre nuestros eventos y ofertas especiales.</p>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Tu email">
-                    </div>
-                    <button class="btn">Suscribirse</button>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 FiestaMania. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Script para funcionalidades -->
     <script>
-        // Navegación móvil
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        // Vista previa de la imagen
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageInput = document.getElementById('event_image');
+            const imagePreview = document.getElementById('image-preview');
+            const previewImg = imagePreview.querySelector('img');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+            imageInput.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        previewImg.src = e.target.result;
+                        imagePreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreview.style.display = 'none';
+                }
+            });
 
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+            // Validar tamaño de archivo
+            imageInput.addEventListener('change', function() {
+                const file = this.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                if (file && file.size > maxSize) {
+                    alert('El archivo es demasiado grande. El tamaño máximo permitido es 5MB.');
+                    this.value = '';
+                    imagePreview.style.display = 'none';
+                }
             });
         });
 
-        // Slider de testimonios
-        const testimonials = document.querySelectorAll('.testimonial');
-        const dots = document.querySelectorAll('.slider-dot');
-        let currentTestimonial = 0;
-
-        function showTestimonial(index) {
-            testimonials.forEach(testimonial => {
-                testimonial.classList.remove('active');
+        // Funcionalidad para el slider de testimonios
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentTestimonial = 0;
+            
+            // Función para cambiar testimonio
+            function showTestimonial(index) {
+                // Ocultar todos los testimonios
+                testimonials.forEach(testimonial => {
+                    testimonial.classList.remove('active');
+                });
+                
+                // Remover clase active de todos los dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Mostrar testimonio seleccionado
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentTestimonial = index;
+            }
+            
+            // Event listeners para los dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonial(index);
+                });
             });
             
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-            });
+            // Cambio automático cada 5 segundos
+            setInterval(() => {
+                let nextTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(nextTestimonial);
+            }, 5000);
             
-            testimonials[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentTestimonial = index;
-        }
-
-        // Event listeners para los dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showTestimonial(index);
+            // Menú hamburguesa para móviles
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
             });
-        });
 
-        // Cambio automático cada 5 segundos
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
+            // Manejo del formulario de registro
+            const formularioRegistro = document.getElementById('formulario-registro');
+            
+            if (formularioRegistro) {
+                formularioRegistro.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Mostrar mensaje de carga
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    // Enviar datos por AJAX
+                    const formData = new FormData(this);
+                    
+                    fetch('procesar_registro.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.estado === 'éxito') {
+                            // Mostrar modal de éxito con opción de ver registro
+                            const ref = data.numero_referencia || '';
+                            // Crear overlay si no existe
+                            if (!document.querySelector('.modal-overlay')) {
+                                const overlay = document.createElement('div');
+                                overlay.className = 'modal-overlay';
+                                overlay.innerHTML = `
+                                    <div class="modal-box">
+                                        <h3>Registro exitoso</h3>
+                                        <p>Gracias. Su número de referencia es <strong>${ref}</strong>.</p>
+                                        <div class="modal-actions">
+                                            <button class="btn btn-secondary" id="modal-close">Cerrar</button>
+                                            <button class="btn" id="modal-view">Ver mi registro</button>
+                                        </div>
+                                    </div>
+                                `;
+                                document.body.appendChild(overlay);
 
-        // Formulario de contacto
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-            contactForm.reset();
-        });
+                                // Event listeners
+                                overlay.querySelector('#modal-close').addEventListener('click', () => {
+                                    overlay.remove();
+                                });
 
-        // Efecto de scroll suave para los enlaces de navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                                overlay.querySelector('#modal-view').addEventListener('click', () => {
+                                    // Redirigir a la página de búsqueda con la referencia
+                                    window.location.href = 'procesar_registro.php?ref=' + encodeURIComponent(ref);
+                                });
+                            }
+                            formularioRegistro.reset();
+                        } else {
+                            // Mostrar errores
+                            let mensajeError = 'Errores en el formulario:\n';
+                            if (Array.isArray(data.errores) && data.errores.length) {
+                                data.errores.forEach(error => {
+                                    mensajeError += '- ' + error + '\n';
+                                });
+                            } else if (data.mensaje) {
+                                mensajeError += data.mensaje;
+                            } else {
+                                mensajeError += 'Ocurrió un error desconocido.';
+                            }
+                            alert(mensajeError);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error al enviar el formulario. Intente nuevamente.');
+                    })
+                    .finally(() => {
+                        // Restaurar botón
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
                     });
-                }
-            });
-        });
-
-        // Efecto de aparición al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Aplicar efecto a las tarjetas de eventos
-        document.querySelectorAll('.event-card, .category-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
+                });
+            }
         });
     </script>
 </body>
 </html>
-=======
-    </section> 
->>>>>>> ac9f681 (Version 3 - Pagina Nueva)
